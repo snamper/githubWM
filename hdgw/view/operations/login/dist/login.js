@@ -1,0 +1,1 @@
+define(function(require,exports,module){var a=require("domains");var c=require("http://a.myhd.wumeiwang.com/hdgw/model/lib/jquery/seajs-jquery-1.8.3.min.js"),b=require("forimg");var d=function(){new b.Fade({interval:500,callback:function(){this.automatic()}});e()};var e=function(){};d()});

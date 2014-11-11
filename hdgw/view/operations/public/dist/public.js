@@ -1,0 +1,1 @@
+define(function(require,exports,module){var a=require("http://a.myhd.wumeiwang.com/hdgw/model/domains/dist/domains.js")});
