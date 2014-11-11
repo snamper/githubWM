@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        /*reset*/
+        html { overflow-x: auto; }
+        body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td, select { padding: 0; margin: 0; list-style: none; }
+        /*body ::selection { color: #fff; background-color: #ff4b33; text-shadow: none; }
+body ::-moz-selection { color: #fff; background-color: #ff4b33; text-shadow: none; }*/
+        /*global*/
+        body { font: 12px/18px 'Microsoft YaHei',HELVETICA; display: table; width: 100%; }
+        h1, h2, h3, h4, h5, h6 { font-size: 14px; }
+        input, select, textarea { outline: none; }
+        a, a:link, a:active, a:visited { text-decoration: none; color: #505050; font-size: 12px; outline: none; }
+        a:hover { text-decoration: underline; color: #f37e15; }
+        img { border: 0; }
+        #page { width: 100%; position: relative; }
+        .clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; *zoom: 1; }
+
+
+
+        @keyframes showAll {
+            from { height: 0; }
+            to { height: 230px; }
+        }
+        /* Firefox */
+        @-moz-keyframes showAll {
+            from { height: 0; }
+            to { height: 230px; }
+        }
+        /* Safari 和 Chrome */
+        @-webkit-keyframes showAll {
+            from { height: 0; }
+            to { height: 230px; }
+        }
+        /* Opera */
+        @-o-keyframes showAll { from;
+        { height: 0; }
+         to { height: 230px; }
+        }
+        .nav_box { width: 980px; margin: 10px auto; }
+        .nav_box .nav_item { float: left; display: block; margin: 0; height: 20px; background: #457966; padding: 10px; cursor: pointer; position: relative; }
+        .nav_box .sub_nav_list { position: absolute; background: #324587; top: 38px; left: 0;height:0}
+        .nav_box .sub_nav_item { padding: 10px; white-space: nowrap; color: #fff; }
+        .nav_box .nav_item_hover .sub_nav_list { height: initial;animation: showAll 0.5s; -moz-animation: showAll 0.5s; /* Firefox */ -webkit-animation: showAll 0.5s; /* Safari 和 Chrome */ -o-animation: showAll 0.5s; /* Opera */  }
+</style>
+    <script type="text/javascript" src="http://a.myhd.wumeiwang.com/hdgw/model/lib/jquery/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $(".nav_item").hover(function () { $(this).addClass("nav_item_hover") }, function () { $(this).removeClass("nav_item_hover") })
+        });
+    </script>
+</head>
+<body>
+    <div class="nav_box">
+        <ul class="nav_list clearfix">
+            <li class="nav_item">导航1
+                <ul class="sub_nav_list">
+                    <li class="sub_nav_item">导航1.1</li>
+                    <li class="sub_nav_item">导航1.2</li>
+                    <li class="sub_nav_item">导航1.3</li>
+                    <li class="sub_nav_item">导航1.4</li>
+                    <li class="sub_nav_item">导航1.5</li>
+                </ul>
+            </li>
+            <li class="nav_item">导航2
+                <ul class="sub_nav_list">
+                    <li class="sub_nav_item">导航2.1</li>
+                    <li class="sub_nav_item">导航2.2</li>
+                    <li class="sub_nav_item">导航2.3</li>
+                    <li class="sub_nav_item">导航2.4</li>
+                    <li class="sub_nav_item">导航2.5</li>
+                </ul>
+            </li>
+            <li class="nav_item">导航3
+                <ul class="sub_nav_list">
+                    <li class="sub_nav_item">导航3.1</li>
+                    <li class="sub_nav_item">导航3.2</li>
+                    <li class="sub_nav_item">导航3.3</li>
+                    <li class="sub_nav_item">导航3.4</li>
+                    <li class="sub_nav_item">导航3.5</li>
+                </ul>
+            </li>
+            <li class="nav_item">导航4
+                <ul class="sub_nav_list">
+                    <li class="sub_nav_item">导航4.1</li>
+                    <li class="sub_nav_item">导航4.2</li>
+                    <li class="sub_nav_item">导航4.3</li>
+                    <li class="sub_nav_item">导航4.4</li>
+                    <li class="sub_nav_item">导航4.5</li>
+                </ul>
+            </li>
+            <li class="nav_item">导航5
+                <ul class="sub_nav_list">
+                    <li class="sub_nav_item">导航5.1</li>
+                    <li class="sub_nav_item">导航5.2</li>
+                    <li class="sub_nav_item">导航5.3</li>
+                    <li class="sub_nav_item">导航5.4</li>
+                    <li class="sub_nav_item">导航5.5</li>
+                </ul>
+            </li>
+            <li class="nav_item">导航6
+                <ul class="sub_nav_list">
+                    <li class="sub_nav_item">导航6.1</li>
+                    <li class="sub_nav_item">导航6.2</li>
+                    <li class="sub_nav_item">导航6.3</li>
+                    <li class="sub_nav_item">导航6.4</li>
+                    <li class="sub_nav_item">导航6.5</li>
+                </ul>
+            </li>
+            <li class="nav_item">导航7
+                <ul class="sub_nav_list">
+                    <li class="sub_nav_item">导航7.1</li>
+                    <li class="sub_nav_item">导航7.2</li>
+                    <li class="sub_nav_item">导航7.3</li>
+                    <li class="sub_nav_item">导航7.4</li>
+                    <li class="sub_nav_item">导航7.5</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
+
