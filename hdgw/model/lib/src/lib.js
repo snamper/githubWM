@@ -8,7 +8,7 @@ define(function (require, exports, module) {
         $ = require("http://a.myhd.wumeiwang.com/hdgw/model/lib/jquery/seajs-jquery-1.8.3.min.js"),
            box = require("http://a.myhd.wumeiwang.com/hdgw/model/wmbox/dist/wmbox.js"),
            loginBox = require("http://a.myhd.wumeiwang.com/hdgw/model/wmloginbox/dist/wmloginbox.js");
-        
+
     } catch (e) {
         require("http://a.myhd.wumeiwang.com/hdgw/model/seajs_jqueryui/development-bundle/ui/jquery.color.js")($);
     }
@@ -681,6 +681,54 @@ define(function (require, exports, module) {
             $ele.stop(true, true);
         };
     };
+    var _onlyDataList = function () {
+        var self = this;
+        var _dataArr = [], _dataObj = {};
+        this.data = _dataObj;
+        this.length = 0;
+        this.push = function (data) {
+            if (data) {
+                if (typeof data === "string" && !_dataObj[data]) {
+                    _dataObj[data] = data;
+                    _dataArr.push(data);
+                    self.length = _dataArr.length;
+                    return true;
+                }
+                if (data.key&&!_dataObj[data.key]) {
+                    _dataObj[data.key] = data;
+                    _dataArr.push(data);
+                    self.length = _dataArr.length;
+                    return true;
+                }
+            }
+            return false;
+        };
+        this.remove = function (key) {
+            if (_dataObj[key]) {
+                _dataObj[key] = null;
+                for (var i in _dataArr) {
+                    if (typeof _dataArr[i] === "string" && _dataArr[i] == key) {
+                        _dataArr.splice(i, 1);
+                        self.length = _dataArr.length;
+                        return true;
+                    }
+                    if (_dataArr[i].key && _dataArr[i].key == key) {
+                        _dataArr.splice(i, 1);
+                        self.length = _dataArr.length;
+                        return true;
+                    }
+                }
+            }
+            return false;
+        };
+        this.getKeys = function () {
+            var _keys = [];
+            for (var i in _dataObj) {
+                _dataObj[i] && _keys.push(i);
+            }
+            return _keys;
+        };
+    };
     (function () {
         cookie_user_data = $.trim(_cookie("wm.user.data"));
         if (cookie_user_data) {
@@ -772,5 +820,9 @@ define(function (require, exports, module) {
             throw "lib.BGShine ele parameter can not be null";
         }
     };
+    //唯一性数据列表
+    exports.createOnlyDataList = function () {
+        return new _onlyDataList();
+    }
 
 });

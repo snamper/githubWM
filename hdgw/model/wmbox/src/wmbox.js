@@ -311,7 +311,7 @@ define(function (require, exports, module) {
         this.setIndex = function (zindex) {
             self.wmBox.css("z-index", zindex + 1);
             self.mask.css("z-index", zindex);
-        }
+        };
         typeof _options.callback === "function" && _options.callback.call(this);
         this.wmBox.attr("top", this.wmBox.css("top"));
         !hasBox && initFixed();
